@@ -24,30 +24,30 @@ ___
 ## Alur Program
 Flow Chart User Journey:
 
-![User Journey](Flowchart_Method\user_journey.drawio.svg)
+![User Journey](Flowchart_Method/user_journey.drawio.svg)
 ___
 
 Flow chart untuk method `add_item`
 
-![Method Add Item](Flowchart_Method\add_item.drawio.svg)
+![Method Add Item](Flowchart_Method/add_item.drawio.svg)
 
 ___
 
 Flow chart untuk method `update_item_name`
 
-![Method Update Nama Item](Flowchart_Method\update_item_name.drawio.svg)
+![Method Update Nama Item](Flowchart_Method/update_item_name.drawio.svg)
 
 ___
 
 Flow chart untuk method `update_item_qty`
 
-![Method Update Jumlah Item ](Flowchart_Method\update_item_qty.drawio.svg)
+![Method Update Jumlah Item ](Flowchart_Method/update_item_qty.drawio.svg)
 
 ___
 
 Flow chart untuk method `update_item_price`
 
-![Method Update Harga Item](Flowchart_Method\update_item_price.drawio.svg)
+![Method Update Harga Item](Flowchart_Method/update_item_price.drawio.svg)
 
 
 ## Penjelasan Code
@@ -123,10 +123,10 @@ Untuk penyelesaian test case 1, kita dapat memanggil method `add_item()`.
 Program akan menampilkan permintaan input, dan customer dapat memasukkan item belanjaan sesuai yang diinginkan.
 
 **output**:
-![hasil test case 1](image\test_case_1.jpg)
+![hasil test case 1](image/test_case_1.jpg)
 
 setelah memasukkan item belanjaan, customer dapat memeriksa daftar belanjaannya dengan memanggil method `check_order()`
-![test case 1 check order](image\test_case_1(1).jpg)
+![test case 1 check order](image/test_case_1(1).jpg)
 
 <br>
 <br>
@@ -137,9 +137,9 @@ setelah memasukkan item belanjaan, customer dapat memeriksa daftar belanjaannya 
 
 untuk test case ke-2, customer memanggil method `delete_item()` dan memasukkan nama item yang ingin dihapus
 **output:**
-![hasil test case 2](image\test_case_2.jpg)
+![hasil test case 2](image/test_case_2.jpg)
 kemudian customer dapat memeriksa belanjaannya lagi menggunakan method `check_order()`
-![test case 2 check order](image\test_case_2(1).jpg)
+![test case 2 check order](image/test_case_2(1).jpg)
 <br>
 <br>
 <br>
@@ -155,16 +155,16 @@ kita dapat tes fitur ini dengan memasukkan beberapa data menggunakan method `add
 
 kemudian kita gunakan method `check_order()` untuk menampilkan daftar belanjaan
 
-![test case 3](image\test_case_3.jpg)
+![test case 3](image/test_case_3.jpg)
 
 lalu kita bisa gunakan method `reset_transaction()` untuk menghapus semua item belanjaan
 
 **output:**
-![test case 3(1)](image\test_case_3(1).jpg)
+![test case 3(1)](image/test_case_3(1).jpg)
 
 untuk membuktikan daftar belanjaan sudah kosong, kita dapat panggil method `check_order()` kembali
 
-![test case 3(2)](image\test_case_3(2).jpg)
+![test case 3(2)](image/test_case_3(2).jpg)
 
 dengan ini, method `reset_transaction()` berfungsi!!!
 
@@ -178,14 +178,14 @@ dengan ini, method `reset_transaction()` berfungsi!!!
 setelah memasukkan item menggunakan method `add_item()`, customer dapat menampilkan daftar belanjaan menggunakan `check_order()` dan menampilkan harga total beserta diskon (jika ada) menggunakan method `total_price()`
 
 **output:**
-![test case 4](image\test_case_4.jpg)
+![test case 4](image/test_case_4.jpg)
 
 <br>
 
 Dalam program yang saya buat, apabila customer belum melakukan `check_order()` tetapi sudah memanggil `total_price()`, maka akan me-print "Mohon gunakan method check_order() terlebih dahulu untuk memeriksa pesanan anda!". Hal ini bertujuan untuk memeriksa apakah hasil inputan sudah valid atau belum dan mencegah terjadi perhitungan harga total yang tidak valid.
 
 **output:**
-![test case 4](image\test_case_4(1).jpg)
+![test case 4](image/test_case_4(1).jpg)
 
 <br>
 <br>

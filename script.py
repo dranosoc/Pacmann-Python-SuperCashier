@@ -39,19 +39,21 @@ untuk menghentikan perintah")
                         nama_item = None
                     while True:
                         try:
-                            jumlah_item = int(input("Masukkan Jumlah Item:\n"))
+                            jumlah_item = input("Masukkan Jumlah Item:\n")
                             if jumlah_item == "<stop>":
                                 break
-                            elif jumlah_item <= 0:
+                            elif int(jumlah_item) <= 0:
                                 print("Masukkan jumlah item dengan benar")
                                 continue
-                            harga_per_item = int(input("Masukkan Harga Item (satuan):\n"))
+                            harga_per_item = input("Masukkan Harga Item (satuan):\n")
                             if harga_per_item == "<stop>":
                                 break
-                            elif harga_per_item <= 0:
+                            elif int(harga_per_item) <= 0:
                                 print("Masukkan harga dengan benar")
                                 continue
                             else:
+                                jumlah_item = int(jumlah_item)
+                                harga_per_item = int(harga_per_item)
                                 self.order_dict['Nama Item'].append(nama_item)
                                 self.order_dict['Jumlah Item'].append(jumlah_item)
                                 self.order_dict['Harga Per Item'].append(harga_per_item)
@@ -59,7 +61,7 @@ untuk menghentikan perintah")
                                 print(f"{nama_item} berhasil ditambahkan ke daftar belanja!")
                                 break
                         except:
-                            self.peringatan()
+                            raise Exception
                     break
             except:
                 self.peringatan()
@@ -135,13 +137,14 @@ untuk menghentikan perintah")
                 else:
                     while True:
                         try:
-                            update_jumlah_item = int(input("Masukkan Jumlah Item yang baru:\n"))
+                            update_jumlah_item = input("Masukkan Jumlah Item yang baru:\n")
                             if update_jumlah_item == "<stop>":
                                 break
-                            elif update_jumlah_item <= 0:
+                            elif int(update_jumlah_item) <= 0:
                                 print("Mohon masukkan jumlah item baru dengan benar")
                                 continue
                             else:
+                                update_jumlah_item = int(update_jumlah_item)
                                 baris = self.order_dict['Nama Item'].index(nama_item)
                                 jumlah_item_lama = self.order_dict['Jumlah Item'][baris] 
                                 self.order_dict['Jumlah Item'][baris] = update_jumlah_item
@@ -173,13 +176,14 @@ untuk menghentikan perintah")
                 else:
                     while True:
                         try:
-                            update_harga_item = int(input("Masukkan harga item yang baru:\n"))
+                            update_harga_item = input("Masukkan harga item yang baru:\n")
                             if update_harga_item == "<stop>":
                                 break
-                            elif update_harga_item <= 0:
+                            elif int(update_harga_item) <= 0:
                                 print("Mohon masukkan angka dengan benar")
                                 continue
                             else:
+                                update_harga_item = int(update_harga_item)
                                 baris = self.order_dict['Nama Item'].index(nama_item)
                                 harga_item_lama = self.order_dict['Harga Per Item'][baris]
                                 self.order_dict['Harga Per Item'][baris] = update_harga_item
@@ -241,15 +245,17 @@ untuk menghentikan perintah")
         or (None in self.order_dict["Harga Per Item"]) or (None in self.order_dict["Total Harga"]):
             a = 1
             baris_kosong = []
-            for i in self.order_dict["Nama Item"]:
-                if (i == None) or (self.order_dict["Jumlah Item"][self.order_dict["Nama Item"].index(i)] == None) \
-                or (self.order_dict["Harga Per Item"][self.order_dict["Nama Item"].index(i)] == None):
+            for i in range(0, len(self.order_dict["Nama Item"])):
+                if (self.order_dict["Nama Item"][i] == None) \
+                or (self.order_dict["Jumlah Item"][i] == None) \
+                or (self.order_dict["Harga Per Item"][i] == None):
                     baris_kosong.append(a)
                 else:
                     pass
                 a += 1
-            print(f'Terdapat kesalahan input data, ada data yang kosong pada baris: {baris_kosong}')
-            print(f'Gunakan method reset_transaction() untuk menghapus semua isi daftar belanja')
+            print('Terdapat kesalahan input data') 
+            print(f'ada data yang kosong pada baris: {baris_kosong}')
+            print('Gunakan method reset_transaction() untuk menghapus semua isi daftar belanja')
             print(tabulate(self.order_dict, headers="keys", tablefmt = "fancy_grid"))
             self.check_order_done = True
             self.order_is_empty = False

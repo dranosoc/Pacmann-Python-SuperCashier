@@ -377,7 +377,9 @@ untuk test case ke-2, customer memanggil method `delete_item()` dan memasukkan n
 **output:**
 
 ![hasil test case 2](image/test_case_2.jpg)
+
 kemudian customer dapat memeriksa belanjaannya lagi menggunakan method `check_order()`
+
 ![test case 2 check order](image/test_case_2(1).jpg)
 <br>
 <br>
